@@ -1,0 +1,63 @@
+#ifndef GRAPHICS_H
+#define GRAPHICS_H
+
+#define ROWS 20
+#define COLS 50
+#define MAX_OBJECTS 100
+
+// Shared canvas across files
+extern char canvas[ROWS][COLS];
+
+// Shape types
+typedef enum { LINE, RECTANGLE, CIRCLE, TRIANGLE } ShapeType;
+
+// Object structure tracking
+typedef struct {
+    int id;
+    ShapeType type;
+    int p1, p2, p3, p4, p5, p6;
+    int active;
+} GraphicObject;
+
+// Function declarations
+void initializeCanvas();
+void displayCanvas();
+void redrawCanvas();
+
+void drawLine(int r1, int c1, int r2, int c2, char ch);
+void drawRectangle(int topRow, int leftCol, int height, int width, char ch);
+void drawCircle(int centerR, int centerC, int radius, char ch);
+void drawTriangle(int r1, int c1, int r2, int c2, int r3, int c3, char ch);
+
+#endif#ifndef GRAPHICS_H
+#define GRAPHICS_H
+
+#define ROWS 20
+#define COLS 50
+#define MAX_OBJECTS 100
+
+// Shared canvas across files
+extern char canvas[ROWS][COLS];
+
+// Shape types
+typedef enum { LINE, RECTANGLE, CIRCLE, TRIANGLE } ShapeType;
+
+// Object structure tracking
+typedef struct {
+    int id;
+    ShapeType type;
+    int p1, p2, p3, p4, p5, p6;
+    int active;
+} GraphicObject;
+
+// Function declarations
+void initializeCanvas();
+void displayCanvas();
+void redrawCanvas();
+
+void drawLine(int r1, int c1, int r2, int c2, char ch);
+void drawRectangle(int topRow, int leftCol, int height, int width, char ch);
+void drawCircle(int centerR, int centerC, int radius, char ch);
+void drawTriangle(int r1, int c1, int r2, int c2, int r3, int c3, char ch);
+
+#endif
